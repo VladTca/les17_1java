@@ -1,4 +1,5 @@
 class CoffeeMachine {
+    private static final String MAXIMUM_CAPASCITY = "Влезет максимум еще: ";
     private String name;
     private int coffeeGramms;
     private int milkInMiliLitrs;
@@ -33,6 +34,7 @@ class CoffeeMachine {
             System.out.println(this);
         } catch (InterruptedException e) {
             System.out.println("Вы прервали приготовление!!! Нет вам больше кофе!");
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -52,7 +54,7 @@ class CoffeeMachine {
     public void setMilkInMiliLitrs(int milkInMiliLitrs) {
         if (milkInMiliLitrs + getMilkInMiliLitrs() > 500) {
             System.out.println("Столько молока в машину не влезет!");
-            System.out.println("Влезет максимум еще: " + (500 - getMilkInMiliLitrs()));
+            System.out.println(MAXIMUM_CAPASCITY + (500 - getMilkInMiliLitrs()));
         } else this.milkInMiliLitrs += milkInMiliLitrs;
     }
 
@@ -63,7 +65,7 @@ class CoffeeMachine {
     public void setCoffeeGramms(int coffeeGramms) {
         if (coffeeGramms + getCoffeeGramms() > 500) {
             System.out.println("Столько кофе в машину не влезет!");
-            System.out.println("Влезет максимум еще: " + (500 - getCoffeeGramms()));
+            System.out.println(MAXIMUM_CAPASCITY + (500 - getCoffeeGramms()));
         } else this.coffeeGramms += coffeeGramms;
     }
 
@@ -74,7 +76,7 @@ class CoffeeMachine {
     public void setWaterInMiliLitrs(int waterInMiliLitrs) {
         if (waterInMiliLitrs + getWaterInMiliLitrs() > 1000) {
             System.out.println("Столько воды в машину не влезет!");
-            System.out.println("Влезет максимум еще: " + (1000 - getWaterInMiliLitrs()));
+            System.out.println(MAXIMUM_CAPASCITY + (1000 - getWaterInMiliLitrs()));
         } else this.waterInMiliLitrs += waterInMiliLitrs;
     }
 
@@ -83,7 +85,7 @@ class CoffeeMachine {
         return "В машине " +
                 "с названием: \"" + name + "\" на данный момент - " +
                 coffeeGramms + " грамм кофе, " +
-                +milkInMiliLitrs + " миллилитров молока, " +
-                +waterInMiliLitrs + " милилитров воды";
+                milkInMiliLitrs + " миллилитров молока, " +
+                waterInMiliLitrs + " милилитров воды";
     }
 }

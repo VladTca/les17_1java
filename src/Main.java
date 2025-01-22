@@ -42,12 +42,7 @@ public class Main {
                 } else if (choice == 'y' || choice == 'Y') {
 
 
-                    try {
-                        prepairCofe(coffeeMachine);
-                        System.out.println("Все еще хотите кофе(y/n)?");
-                    } catch (Exception e) {
-                        System.out.println("Ошибка ввода!");
-                    }
+                    coffeDo(coffeeMachine);
 
 
                 } else if (choice == 'n' || choice == 'N') {
@@ -61,6 +56,15 @@ public class Main {
             }
         } while (true);
 
+    }
+
+    private static void coffeDo(CoffeeMachine coffeeMachine) {
+        try {
+            prepairCofe(coffeeMachine);
+            System.out.println("Все еще хотите кофе(y/n)?");
+        } catch (Exception e) {
+            System.out.println("Ошибка ввода!");
+        }
     }
 
     public static void prepairCofe(CoffeeMachine coffeeMachine) {
