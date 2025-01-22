@@ -77,15 +77,37 @@ public class Main {
                         coffeeMachine.prepairCoffe();
                         break;
                     } else {
-                        maloWater(coffeeMachine, sc);
+                        maloMeterial(coffeeMachine, sc,"воды");
+                        //maloWater(coffeeMachine,sc);
                     }
                 } else {
-                    maloMilk(coffeeMachine, sc);
+                   maloMeterial(coffeeMachine, sc,"молока");
+                   // maloMilk(coffeeMachine,sc);
                 }
             } else {
-                maloCoffe(coffeeMachine, sc);
+                maloMeterial(coffeeMachine, sc,"кофе");
+                //maloCoffe(coffeeMachine,sc);
             }
         } while (true);
+    }
+
+    private static void  maloMeterial(CoffeeMachine coffeeMachine,Scanner sc,String name){
+
+
+            System.out.printf("Не хватает %s!", name);
+            System.out.println();
+            System.out.println(coffeeMachine);
+            System.out.printf("Введите количество %s, которое хотите добавить:", name);
+            int amnt=sc.nextInt();
+
+                if (name.equals("кофе")) {
+                    coffeeMachine.setCoffeeGramms(amnt);
+                }else if(name.equals("молока")){
+                    coffeeMachine.setMilkInMiliLitrs(amnt);
+                }else {
+                    coffeeMachine.setWaterInMiliLitrs(amnt);
+                }
+
     }
 
     private static void maloCoffe(CoffeeMachine coffeeMachine, Scanner sc) {

@@ -32,6 +32,7 @@ class CoffeeMachine {
             milkInMiliLitrs -= 50;
             waterInMiliLitrs -= 100;
             System.out.println(this);
+            System.out.println("---------------------");
         } catch (InterruptedException e) {
             System.out.println("Вы прервали приготовление!!! Нет вам больше кофе!");
             Thread.currentThread().interrupt();
@@ -55,6 +56,7 @@ class CoffeeMachine {
         if (milkInMiliLitrs + getMilkInMiliLitrs() > 500) {
             System.out.println("Столько молока в машину не влезет!");
             System.out.println(MAXIMUM_CAPASCITY + (500 - getMilkInMiliLitrs()));
+            System.out.println("---------------");
         } else this.milkInMiliLitrs += milkInMiliLitrs;
     }
 
@@ -66,6 +68,7 @@ class CoffeeMachine {
         if (coffeeGramms + getCoffeeGramms() > 500) {
             System.out.println("Столько кофе в машину не влезет!");
             System.out.println(MAXIMUM_CAPASCITY + (500 - getCoffeeGramms()));
+            System.out.println("----------");
         } else this.coffeeGramms += coffeeGramms;
     }
 
@@ -77,6 +80,7 @@ class CoffeeMachine {
         if (waterInMiliLitrs + getWaterInMiliLitrs() > 1000) {
             System.out.println("Столько воды в машину не влезет!");
             System.out.println(MAXIMUM_CAPASCITY + (1000 - getWaterInMiliLitrs()));
+            System.out.println("------------------");
         } else this.waterInMiliLitrs += waterInMiliLitrs;
     }
 
