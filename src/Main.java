@@ -110,36 +110,5 @@ public class Main {
 
     }
 
-    private static void maloCoffe(CoffeeMachine coffeeMachine, Scanner sc) {
-        do {
 
-            System.out.println("Не хватает кофе!");
-            System.out.println(coffeeMachine);
-            System.out.println("Введите количество кофе которое хотите добавить:");
-            coffeeMachine.setCoffeeGramms(sc.nextInt());
-            System.out.println("----------------------");
-        } while (!(coffeeMachine.getCoffeeGramms() >= 30 && coffeeMachine.getCoffeeGramms() <= 500));
-    }
-
-    private static void maloMilk(CoffeeMachine coffeeMachine, Scanner sc) {
-        do {
-
-            System.out.println("Не хватает молока!");
-            System.out.println(coffeeMachine);
-            System.out.println("Введите количество молока которое хотите долить:");
-            coffeeMachine.setMilkInMiliLitrs(sc.nextInt());
-            System.out.println("-------------------");
-        } while (!(coffeeMachine.getMilkInMiliLitrs() >= 50 && coffeeMachine.getMilkInMiliLitrs() <= 500));
-    }
-
-    private static void maloWater(CoffeeMachine coffeeMachine, Scanner sc) {
-        do {
-
-            System.out.println("Не хватает воды!");
-            System.out.println(coffeeMachine);
-            System.out.println("Введите количество воды которое хотите долить:");
-            coffeeMachine.setWaterInMiliLitrs(sc.nextInt());
-            System.out.println("----------------------");
-        } while (!(coffeeMachine.getWaterInMiliLitrs() >= 100 && coffeeMachine.getWaterInMiliLitrs() <= 1000));
-    }
 }
