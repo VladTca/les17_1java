@@ -78,15 +78,12 @@ public class Main {
                         break;
                     } else {
                         maloMeterial(coffeeMachine, sc,"воды");
-                        //maloWater(coffeeMachine,sc);
                     }
                 } else {
                    maloMeterial(coffeeMachine, sc,"молока");
-                   // maloMilk(coffeeMachine,sc);
                 }
             } else {
                 maloMeterial(coffeeMachine, sc,"кофе");
-                //maloCoffe(coffeeMachine,sc);
             }
         } while (true);
     }
